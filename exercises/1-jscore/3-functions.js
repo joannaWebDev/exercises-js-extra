@@ -6,7 +6,6 @@
     - Employees with a degree of disability, have a reduction of 3% in their goverment taxes
     Build an array with all the employees
     Use forEach to console.log the name and the netSalary of all employees
-
 */
 
 const JUNIOR_GROSS_SALARY = 24000;
@@ -41,6 +40,29 @@ const senior1 = {
 };
 
 // YOUR CODE HERE
+
+const monthlyNetSalary = (employee) => {
+    let tax = 0;
+    if (employee.age <= 30) tax = BELOW30_TAXES
+    else tax = ABOVE30_TAXES;
+
+    let result = employee.grossSalary * (100 - tax) / 100;
+    return result;
+}
+console.log(`The net salary of ${junior1.name} is $${monthlyNetSalary(junior1)}`);
+
+
+// let employees = [junior1,junior2, senior1];
+
+// let employeesUnder30 = employees.filter(ages => ages.age <= 30)
+// console.log('The employees under 30 are',employeesUnder30);
+
+// let employeesAbove30 = employees.filter(ages => ages.age > 30)
+// console.log('The employees above 30 are',employeesAbove30);
+
+
+
+
 
 /* EXPECTED RESULT
 > The net salary of Lukasz is 1474.28€/month
